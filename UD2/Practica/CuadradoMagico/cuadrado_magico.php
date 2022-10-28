@@ -15,21 +15,15 @@
             ini_set('html_errors', 0); 
 
             $numeros = array(
-                array(4, 5, 2),
+                array(4, 9, 2),
                 array(3, 5, 7),
                 array(8, 1, 6)
             );
 
-            $max_filas = count($numeros);
+           
+            function analizarCuadradoMagico(){
 
-            for ($fila = 0; $fila < $max_filas; $fila++){
                 
-                $max_columna_fila = array_sum($numeros[$fila]);
-                echo "Fila $fila = ".$max_columna_fila."<br>";
-            }
-
-            /*
-            function analizarCuadradoMagico($numeros){
 
             }
 
@@ -38,26 +32,34 @@
 
                 for ($fila = 0; $fila < $max_filas; $fila++){
                     echo"Fila $fila";
-                    $max_columna_fila = array_sum($numeros[$fila]);
-                    echo $max_columna_fila;
+                    $sumaFilas = array_sum($numeros[$fila]);
+                    echo $sumaFilas;
                 }
 
             }
 
             function sumarColumnas($numeros){
-                $max_columnas = count($numeros);
-
-                for ($fila = 0; $fila < $max_filas; $fila++){
-                    echo"Fila $fila";
-                    $max_columna_fila = array_sum($numeros[$fila]);
-                    echo $max_columna_fila;
+            $max_filas = count($numeros);
+            
+                for ($i = 0; $i < $max_filas; $i++){
+                    $resultado = 0;
+                    $sumaFilas = count($numeros[$i]);
+                    for ($j = 0; $j < $max_filas; $j++){
+                        $total = $numeros[$j][$i];
+                        $resultado = $resultado + $total;
+                        
+                    }
+                    echo $i.": ".$resultado."<br>";
                 }
 
             }
 
 
-            function pintarCuadradoMagico(){
+            function pintarCuadradoMagico($objetox){
             /*
+                objeto: array_push(como un add del arrayList) o objeto->pintar();
+                if con un boolean
+
                 <table>
                     <tr>
                         <td>4</td>
@@ -75,10 +77,9 @@
                         <td>6</td>
                     </tr>
                 </table>
-            
-            }
             */
-
+            }
+            
 
         ?>
 
