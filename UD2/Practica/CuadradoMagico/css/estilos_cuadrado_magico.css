@@ -20,3 +20,19 @@ td{
     font-weight: bold;
 }
 
+.falso{
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+.verdadero{
+    font-weight: bold;
+    color: green;
+    text-align: center;
+}
+.contenedor{
+    width: 400px;
+    margin: auto;
+}
+
+

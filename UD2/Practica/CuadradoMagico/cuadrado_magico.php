@@ -12,7 +12,9 @@
 
         <?php
             ini_set('display_errors', 'On');
-            ini_set('html_errors', 0); 
+            ini_set('html_errors', 0);
+            
+            require("cuadrado.php");
 
             $numeros = array(
                 array(4, 9, 2),
@@ -20,26 +22,64 @@
                 array(8, 1, 6)
             );
 
+            $cuadradoMagico = analizarCuadradoMagico($numeros);
+            pintarCuadradoMagico($cuadradoMagico);
+
            
-            function analizarCuadradoMagico(){
+            function analizarCuadradoMagico($numeros){
+                $sumarFilas = sumarFilas($numeros);
+                $sumarColumnas = sumarColumnas($numeros);
+                $sumarDiagonales = sumarDiagonales($numeros);
 
+                $resultadoFila1 = 0;
+                $contador = 3;
+
+                for($i = 0; $i < $contador; $i++){
+                    $resultadoFila1 = $resultadoFila1 + $numeros[0][$i];
+                }
+
+                $esCuadradoMagico = true;
+                $contador = count($sumarFilas);
+
+                for($i = 0; $i < $contador; $i++){
+                    if($resultadoFila1 != $sumarFilas[$i]){
+                        $esCuadradoMagico = false;
+                    }
+                    if($resultadoFila1 != $sumarColumnas[$i]){
+                        $esCuadradoMagico = false;
+                    }
+
+                }
+
+                $contadorDiagonales = count($sumarDiagonales);
+
+                for($i = 0; $i < $contadorDiagonales; $i++){
+                    if($resultadoFila1 != $sumarDiagonales[$i]){
+                        $esCuadradoMagico = false;
+                    }
+                }
+
+                $cuadradoMagico = new CuadradoMagico($numeros, $sumarFilas, $sumarColumnas, $sumarDiagonales, $esCuadradoMagico, $resultadoFila1);
+                return $cuadradoMagico;
                 
-
             }
 
             function sumarFilas($numeros){
                 $max_filas = count($numeros);
+                $arrayResultado = [];
 
-                for ($fila = 0; $fila < $max_filas; $fila++){
-                    echo"Fila $fila";
-                    $sumaFilas = array_sum($numeros[$fila]);
-                    echo $sumaFilas;
+                for ($i = 0; $i < $max_filas; $i++){
+                    $sumaFilas = array_sum($numeros[$i]);
+        
+                    array_push($arrayResultado, $sumaFilas);
+                   
                 }
-
+                return $arrayResultado;
             }
 
             function sumarColumnas($numeros){
             $max_filas = count($numeros);
+            $arrayResultado = [];
             
                 for ($i = 0; $i < $max_filas; $i++){
                     $resultado = 0;
@@ -49,35 +89,76 @@
                         $resultado = $resultado + $total;
                         
                     }
-                    echo $i.": ".$resultado."<br>";
+                    array_push($arrayResultado, $resultado);
                 }
+                return $arrayResultado;
+
+            }
+
+            function sumarDiagonales($numeros){
+                $primera_diagonal = 0;
+                $segunda_diagonal = 0;
+                $contador = count($numeros) -1;
+                $arrayResultado = [];
+
+                for($i = 0; $contador >= $i; $i++){
+                    $primera_diagonal = $primera_diagonal + $numeros[$i][$contador - $i];
+                    $segunda_diagonal = $segunda_diagonal + $numeros[$i][$i];
+                }
+
+                array_push($arrayResultado, $primera_diagonal);
+                array_push($arrayResultado, $segunda_diagonal);
+
+                return $arrayResultado;
 
             }
 
 
-            function pintarCuadradoMagico($objetox){
-            /*
-                objeto: array_push(como un add del arrayList) o objeto->pintar();
-                if con un boolean
+            function pintarCuadradoMagico($cuadradoMagico){
 
-                <table>
-                    <tr>
-                        <td>4</td>
-                        <td>9</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>1</td>
-                        <td>6</td>
-                    </tr>
-                </table>
-            */
+                $contador = count($cuadradoMagico->sumarFilas);
+                echo "<table>";
+                    for($i = 0; $i < $contador; $i++){
+                        echo "<tr>";
+                        for($j = 0; $j < $contador; $j++){
+                            echo "<td>".$cuadradoMagico->numeros[$i][$j]."</td>";
+                        }
+                        echo "</tr>";
+                    }
+                echo "</table>";
+
+
+                if($cuadradoMagico->esCuadradoMagico == true){
+                    echo "<p class = 'verdadero'>¡ES UN CUADRADO MÁGICO!</p>";
+                }else{
+                    echo "<p class = 'falso'>NO ES UN CUADRADO MÁGICO</p>";
+
+                    echo "<div class= 'contenedor'><p>Respeto a la suma de la primera fila que es ".$cuadradoMagico->resultadoFila1.",</p>";
+                    echo "<p>Las filas diferentes a ".$cuadradoMagico->resultadoFila1." son:</p>";
+                    for($i = 0; $i < $contador; $i++){
+                        if($cuadradoMagico->sumarFilas[$i] != $cuadradoMagico->resultadoFila1){
+                            echo "<p>Fila ".($i+1)."</p>";
+                        }
+                    }
+    
+                    echo "<p>Las columnas diferentes a ".$cuadradoMagico->resultadoFila1." son:</p>";
+                    for($i = 0; $i < $contador; $i++){
+                        if($cuadradoMagico->sumarColumnas[$i] != $cuadradoMagico->resultadoFila1){
+                            echo "<p>Columna ".($i+1)."</p>";
+                        }
+                    }
+    
+                    echo "<p>Las diagonales diferentes a ".$cuadradoMagico->resultadoFila1." son:</p>";
+                    if($cuadradoMagico->sumarDiagonales[0] != $cuadradoMagico->resultadoFila1){
+                            echo "<p>Primera diagonal</p>";
+                    }
+                    if($cuadradoMagico->sumarDiagonales[1] != $cuadradoMagico->resultadoFila1){
+                        echo "<p>Segunda diagonal</p>";
+                    }
+                    
+                    echo"</div>";
+                }
+                           
             }
             
 
