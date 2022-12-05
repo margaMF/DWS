@@ -38,47 +38,6 @@
                    </div>
                </div> -->
 
-               <?php 
-
-                    ini_set('display_errors', 'On');
-                    ini_set('html_errors', 0);
-
-                    require("clasePelicula.php");
-
-                    function obtenerDatos($categoria){
-
-                        $conexion = mysqli_connect('localhost', 'root', '1234');
-                
-                        mysqli_select_db($conexion, 'cartelera');
-                
-                        $consulta = "SELECT t_genero.nombre, titulo, año, duracion, sinopsis, imagen, votos, id_categoria FROM t_peliculas INNER JOIN t_genero ON t_genero.id = t_peliculas.id_categoria WHERE id_categoria = 2;";
-                
-                        $resultado = mysqli_query($conexion, $consulta);
-                
-                        if (!$resultado){
-                            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-                            $mensaje = 'Consulta realitzada: ' . $consulta;
-                            die($mensaje);
-                        }else{
-                            echo "conexión OK"."<br>";  
-                
-                            $i = 0;
-                
-                            while($registro = mysqli_fetch_assoc($resultado) ){
-                                
-                                $datosPeliculas[$i] = new Pelicula($registro['nombre'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos'], $registro['id_categoria']);
-                                
-                                $i++;
-                            }
-
-                            return $datosPeliculas;
-                        }
-                }
-                $categoria = 2;
-                $pelicula = obtenerDatos($categoria);
-                var_dump($pelicula);
-               ?>
-
             </div>
 
         </div>

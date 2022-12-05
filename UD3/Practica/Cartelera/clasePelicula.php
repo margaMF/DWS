@@ -1,10 +1,12 @@
 <?php
 
-class pelicula1{
+class pelicula{
+
+    function __construct(){
+
+    }
     
-    //constructor vacio
-    //cambiar a function init();
-    function __construct($categoria, $titulo, $año, $duracion, $sinopsis, $imagen, $votos){
+    function init($categoria, $titulo, $año, $duracion, $sinopsis, $imagen, $votos){
         $this-> categoria = $categoria;
         $this-> titulo = $titulo;
         $this-> año = $año;
@@ -16,7 +18,6 @@ class pelicula1{
 
     
     function pintarPeliculas($datosPeliculas){
-        /*hacer un array peliculas, instanciar distintas peliculas y gurdarlas en un array, imprimir el array*/
         
         foreach($datosPeliculas as $pelicula){
             echo '<div class="contenedorPeliculas">';
@@ -48,7 +49,7 @@ class pelicula1{
         
         function obtenerDatos($categoria){
 
-            //cambiar por la version 2
+            //CAMBIAR POR LA VERSIÓN 2
 
             $conexion = mysqli_connect('localhost', 'root', '1234');
     
@@ -68,11 +69,11 @@ class pelicula1{
                 $i = 0;
     
                 while($registro = mysqli_fetch_assoc($resultado) ){
+                    $pelicula1 = new Pelicula();
+                    $pelicula1->init($registro['id_categoria'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos']);
 
-                    /*$categoria, $titulo, $año, $duracion, $sinopsis, $imagen, $votos*/
-                    
-                    $datosPeliculas[$i] = new Pelicula($registro['id_categoria'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos'], );
-                    
+                    $datosPeliculas[$i] = $pelicula1;
+    
                     $i++;
                 }
 

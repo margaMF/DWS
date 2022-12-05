@@ -19,6 +19,7 @@
             <div class="contenedorPeliculas">
                 <div class="primera_columna">
                     <div class="contenedorFormulario">
+                         <!--Quitar formulario hacerlo con enlaces con get-->
                         <form action="accion.php" method="get" class="formulario">
                             <p>Elige la categoría que prefieras</p>
                             <input type="submit" value="Terror" class="bTerror"/>
