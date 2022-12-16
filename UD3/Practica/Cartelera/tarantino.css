@@ -4,37 +4,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
 p{
     color: white;
     margin-top: 15px;
 }
 
-h1{
+h2{
     color: white;
-    text-align: center;
-    font-size: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .primera_caja{
     background-color: black;
     height: 10%;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .segunda_caja{
-    background-image: url(img/tarantino/fondoTarantino.jpg);
-    background-size: 100%;
-    height: 100%;
+    height: 60%;
 }
 
 .contenedorImagen{
     padding-left: 40px;
-    height: 350px;
-    width: 250px;
-}
-
-.contenedorSinopsis{
-    margin-top: 40px;
+    height: 250px;
+    width: 195px;
 }
 
 .botonInicio{
@@ -53,41 +48,39 @@ h1{
 .enlaceFicha{
     text-decoration: none;
     line-height: 50px;
-    color: black;
-    font-weight: 500;
+    color: rgb(159, 53, 1);
+    font-weight: 900;
 }
 
 .bi{
     font-size: 18px;
-    color: black;
+    color: rgb(159, 53, 1);
     font-style: normal;
 }
 
 .votos{
     font-weight: bold;
     padding: 15px;
-    background: black;
+    background: rgb(248, 107, 0);
     border-bottom: 2px solid white;
 }
 
-.contenedorSinopsisFicha{
-    margin-top: -14px;
-}
-
 .subtitulo{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
 }
 
 .imagenes{
     height: 100%;
     width: 100%;
+    padding-top: 5px;
 }
 
 .primera_columna{
     float:left;
     height: 100%;
-    width: 33.3%;
+    width: 25%;
+    padding-left: 100px;
 }
 
 .segunda_columna{
@@ -96,7 +89,15 @@ h1{
     width: 60%;
 }
 
+.contenedorSinopsis{
+  border-bottom: 2px solid rgb(159, 53, 1);
+}
+
 .contenedor{
     height: 100%;
     width: 100%;
+    background-image: url(img/tarantino/fondoT2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: auto;
 }

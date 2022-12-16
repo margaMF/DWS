@@ -11,22 +11,54 @@ class categoria{
         $this-> nombre = $nombre;
     }
 
-    function pintarCategoria(){
-        //igual que clasePelicula
+    function pintarCategoria($datosCategoria){
+        
+        foreach($datosCategoria as $categoria){
+
+            echo '<a href="peliculas.php?id_categoria='.$categoria->id.'" class="botonCategorias">'. $categoria->nombre.'</a>';
+                        
+        }
 
     }
 
     function obtenerDatos(){
-        //Igual que clasePelicula
-        //select id, nombre from t_categoria;
         
-    }
+        $conexion = mysqli_connect('localhost', 'root', '1234');
 
-    function validarParametroName(){
-        /*
-        Probar si funciona sólo con esta línea.
-        $name = htmlspecialchars($_GET["name"]);
-        */
+        if(mysqli_connect_errno()){
+            echo "Error al conectar a MySQL: ". mysqli_connect_error();
+        }
+
+        mysqli_select_db($conexion, 'cartelera');
+
+        $consulta =  "SELECT id, nombre FROM t_categoria;";
+
+        $resultado = mysqli_query($conexion, $consulta);
+
+        if (!$resultado){
+            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+            $mensaje = 'Consulta realitzada: ' . $consulta;
+            die($mensaje);
+        }else{
+            if(($resultado->num_rows) > 0){
+                $i = 0;
+
+                while($registro = mysqli_fetch_assoc($resultado) ){
+                    $categoria1 = new Categoria();
+                    $categoria1->init($registro['id'], $registro['nombre']);
+
+                    $datosCategoria[$i] = $categoria1;
+
+                    $i++;
+                }
+
+            }else{
+                echo "No hay resultados";
+            }
+
+            return $datosCategoria;
+        }
+        
     }
 
 }

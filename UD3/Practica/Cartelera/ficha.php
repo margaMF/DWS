@@ -17,7 +17,7 @@
         <div class="segunda_caja">
 
             <div class="contenedorPeliculas">
-                <!-- 
+                
                 <div class="primera_columna">
                     <div class="contenedorImagen">
                        <img src="img/terror/pelicula1.jpg" alt="Sinister" class="imagenes">
@@ -36,7 +36,7 @@
                         <p>Ellison (Ethan Hawke, 'Gattaca'), es un periodista especializado en escribir artículos y novelas sobre casos de crímenes célebres. Para poder dedicarse a esta tarea en cuerpo y alma, ha instaurado una sistema de vida itinerante un tanto particular con su familia: se trasladan todos juntos de condado en condado para instalarse durante un tiempo en el lugar de los hechos y así poder investigar en profundidad cada uno de los casos.
                         Una de estas investigaciones le llevará a una casa donde toda la familia murió asesinada. Y allí se quedará a vivir con su mujer y sus hijos para poder inspirarse mejor y recabar los datos necesarios para la confección de su novela. Sin embargo, una vez en la casa, la familia descubrirá una serie de documentación y de cintas de vídeo en las que se recogen los detalles de estos misteriosos homicidios. Ellison comenzará a tirar del hilo de estas pistas y descubrirá que las muertes no han sido causadas por la mano de ningún ser humano, sino de una entidad sobrenatural que todavía se encuentra presente en la casa...</p>
                    </div>
-               </div> -->
+               </div>
 
             </div>
 

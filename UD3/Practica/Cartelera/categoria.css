@@ -30,16 +30,9 @@ h1{
     height: 90%;
 }
 
-.contenedorImagen{
-    padding-left: 40px;
-    height: 350px;
-    width: 250px;
-}
-
 .botonInicio{
     text-decoration: none;
     padding: 20px;
-    
 }
 
 .boton{
@@ -50,49 +43,21 @@ h1{
     font-size: 30px;
 }
 
-.votos{
-    font-weight: bold;
-    padding: 15px;
-    background: linear-gradient(90deg, rgba(121,9,9,0.3368697820925245) 0%, rgba(0,0,0,1) 100%);
-    border-bottom: 2px solid white;
-}
-
-.contenedorFormulario{
+.contenedorCategorias{
     margin-top: 300px;
-}
-
-.formulario{
     text-align: center;
     margin-left: 400px;
     font-size: 30px;
 }
 
-.bTerror{
-    margin-top: 30px;
-    width: 140px;
-    height: 70px;
+.botonCategorias{
+    text-decoration: none;
+    background-color: white;
+    color: black;
     border-radius: 10px;
-    border-color: transparent;
-    font-size: 18px;
-}
-
-.bTarantino{
-    margin-left: 10px;
-    width: 140px;
-    height: 70px;
-    border-radius: 10px;
-    border-color: transparent;
-    font-size: 18px;
-}
-
-.subtitulo{
     font-size: 20px;
-    font-weight: 800;
-}
-
-.imagenes{
-    height: 100%;
-    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
 }
 
 .primera_columna{

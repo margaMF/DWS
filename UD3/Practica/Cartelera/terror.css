@@ -9,35 +9,27 @@ p{
     margin-top: 15px;
 }
 
-a{
+h2{
     color: white;
-}
-
-h1{
-    color: white;
-    text-align: center;
-    font-size: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .primera_caja{
     background-color: black;
     height: 10%;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .segunda_caja{
-    background-image: url(img/terror/fondoTerror.jpg);
-    background-size: 100%;
-    height: 100%;
+    height: 60%;
 }
 
 .contenedorImagen{
     padding-left: 40px;
-    height: 350px;
-    width: 250px;
-}
-
-.contenedorSinopsis{
-    margin-top: 40px;
+    height: 250px;
+    width: 195px;
 }
 
 .botonInicio{
@@ -69,28 +61,26 @@ h1{
 .votos{
     font-weight: bold;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(121,9,9,0.3368697820925245) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(227, 37, 37, 0.337) 0%, rgba(0,0,0,1) 100%);
     border-bottom: 2px solid white;
 }
 
-.contenedorSinopsisFicha{
-    margin-top: -14px;
-}
-
 .subtitulo{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .imagenes{
     height: 100%;
     width: 100%;
+    padding-top: 5px;
 }
 
 .primera_columna{
     float:left;
     height: 100%;
-    width: 33.3%;
+    width: 25%;
+    padding-left: 100px;
 }
 
 .segunda_columna{
@@ -102,4 +92,8 @@ h1{
 .contenedor{
     height: 100%;
     width: 100%;
+    background-image: url(img/terror/fondoTerror.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: auto;
 }
