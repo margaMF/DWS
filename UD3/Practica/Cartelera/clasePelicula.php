@@ -161,11 +161,7 @@ class Pelicula{
                                 echo '<p class="titulosDatosFicha">Duración: '.$registro['duracion'].' minutos.</p>';
                                 echo '<p class="titulosDatosFicha">Año: ' .$registro['año'].'</p>';
                                 echo '<p class="titulosDatosFicha">Directores/as: '.$registro['director'].'</p>';
-                                $nombresActores = ' ';
-                                while($registroActores = mysqli_fetch_assoc($resultado)){
-                                    $nombresActores = $nombresActores.' '.$registroActores['actor'].' ';
-                                }
-                                echo '<p class="titulosDatosFicha">Reparto: '.$nombresActores.'</p>';
+                                echo '<p class="titulosDatosFicha">Reparto: '.$registro['actor'].'</p>';
                                 echo '<br>';
                                 echo '<p>'.$registro['sinopsis'].'</p>';
                             echo '</div>';

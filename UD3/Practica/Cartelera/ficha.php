@@ -18,7 +18,7 @@
 
         <div class="primera_caja">
             <div class="botonInicio">
-                <h1 class="boton">FICHA PELÍCULA</h1>
+                <h1 class="cabecera">FICHA PELÍCULA</h1>
             </div>
         </div>
 

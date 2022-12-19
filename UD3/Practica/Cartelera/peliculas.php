@@ -18,7 +18,7 @@
 
             <div class="primera_caja">
                 <div class="botonInicio">
-                    <h1 class="boton">MARATONES</h1>
+                    <h1 class="cabecera">MARATONES</h1>
                 </div>
             </div>
 
