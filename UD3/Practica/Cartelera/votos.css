@@ -1,12 +1,12 @@
 p{
     color: rgb(255, 75, 21);
     font-size: 50px;
-    margin-left: 350px;
+    text-align: center;
     margin-top: 300px;
 }
 
 a{
-    margin-left: 620px;
+    margin-left: 700px;
     margin-top: 300px;
     text-decoration: none;
     color: white;

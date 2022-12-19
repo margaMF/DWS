@@ -43,7 +43,8 @@ h2{
     text-decoration: none;
     font-weight: bold;
     color: white;
-    margin-left: 620px;
+    /* margin-left: 620px; */
+    text-align: center;
     font-size: 30px;
 }
 
