@@ -7,12 +7,14 @@
 p{
     color: white;
     margin-top: 15px;
+    text-shadow: 0.1em 0.1em 0.2em black;
 }
 
 h2{
     color: white;
     font-size: 18px;
     text-transform: uppercase;
+    text-shadow: 0.1em 0.1em 0.2em black;
 }
 
 .primera_caja{
@@ -52,6 +54,14 @@ h2{
     font-weight: 900;
 }
 
+a:hover{
+    color: rgb(255, 85, 0);
+}
+
+a:active{
+    color: rgb(255, 141, 84);
+}
+
 .bi{
     font-size: 18px;
     color: rgb(159, 53, 1);
@@ -63,10 +73,31 @@ h2{
     padding: 15px;
     background: rgb(248, 107, 0);
     border-bottom: 2px solid white;
+    border-radius: 10px;
 }
 
 .subtitulo{
     font-size: 18px;
+    font-weight: 800;
+}
+
+.contenedorVotosFicha{
+    border-radius: 10px;
+    margin-left: 32%;
+}
+
+.botonVotos{
+    background-color: white;
+    padding: 8px;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    color: rgb(190, 79, 0);
+}
+
+.titulosDatosFicha{
     font-weight: 800;
 }
 

@@ -10,7 +10,7 @@
 
             <div class="primera_caja">
                 <div class="botonInicio">
-                    <a href="peliculas.php" class="boton">CATEGORÍAS DE LAS PELÍCULAS</a>
+                    <a href="peliculas.php" class="cabecera">CATEGORÍAS DE LAS PELÍCULAS</a>
                 </div>
             </div>
 

@@ -1,45 +1,48 @@
 <html>
 <head>
     <title>Cartelera</title>
-    <link rel="stylesheet" href="terror.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <?php 
+            if($_GET['id_categoria'] == 1){
+                echo '<link rel="stylesheet" href="terror.css">';
+            }elseif($_GET['id_categoria'] == 2){
+                echo '<link rel="stylesheet" href="tarantino.css">';
+            }
+        ?>
+
 </head>
 <body>
     <div class="contenedor">
 
         <div class="primera_caja">
             <div class="botonInicio">
-                <a href="index.html" class="boton">PELÍCULA</a>
+                <h1 class="boton">FICHA PELÍCULA</h1>
             </div>
         </div>
 
         <div class="segunda_caja">
 
-            <div class="contenedorPeliculas">
+            <?php
+                require('clasePelicula.php');
+
+                ini_set('display_errors', 'On');
+                ini_set('html_errors', 0);
+
+                $idPelicula = $_GET['id_pelicula'];
                 
-                <div class="primera_columna">
-                    <div class="contenedorImagen">
-                       <img src="img/terror/pelicula1.jpg" alt="Sinister" class="imagenes">
-                    </div>
-               </div>
-   
-               <div class="segunda_columna">
-                   <div class="contenedorSinopsisFicha">
-                        <p class="votos">Votos:</p>
-                        <p class="subtitulo">SINISTER:</p>
-                        <p><span style="font-weight: 900; color: rgb(127, 91, 91)">Duración:</span> 110 minutos</p>
-                        <p><span style="font-weight: 900; color: rgb(127, 91, 91)">Año:</span> 2012</p>
-                        <p><span style="font-weight: 900; color: rgb(127, 91, 91)">Directores/as:</span> Scott Derrickson</p>
-                        <p><span style="font-weight: 900; color: rgb(127, 91, 91)">Reparto:</span> Ethan Hawke, James Ransone, Juliet Rylance, Vincent D'Onofrio, Fred Dalton Thompson, Clare Foley, Michael Hall D'Addario, Victoria Leigh, Cameron Ocasio</p>
-                        <br>
-                        <p>Ellison (Ethan Hawke, 'Gattaca'), es un periodista especializado en escribir artículos y novelas sobre casos de crímenes célebres. Para poder dedicarse a esta tarea en cuerpo y alma, ha instaurado una sistema de vida itinerante un tanto particular con su familia: se trasladan todos juntos de condado en condado para instalarse durante un tiempo en el lugar de los hechos y así poder investigar en profundidad cada uno de los casos.
-                        Una de estas investigaciones le llevará a una casa donde toda la familia murió asesinada. Y allí se quedará a vivir con su mujer y sus hijos para poder inspirarse mejor y recabar los datos necesarios para la confección de su novela. Sin embargo, una vez en la casa, la familia descubrirá una serie de documentación y de cintas de vídeo en las que se recogen los detalles de estos misteriosos homicidios. Ellison comenzará a tirar del hilo de estas pistas y descubrirá que las muertes no han sido causadas por la mano de ningún ser humano, sino de una entidad sobrenatural que todavía se encuentra presente en la casa...</p>
-                   </div>
-               </div>
+                $p2 = new Pelicula();
+                $p2->obtenerDatosFicha();
+            ?>
 
-            </div>
+        </div>
 
+        <div class="contenedorVotosFicha">
+            <form action="votar.php" method="POST">
+                <input type="submit" value="Votar" class="botonVotos">
+                <input type="hidden" name="id_pelicula" value= "<?php echo $idPelicula ?>"> 
+            </form>
         </div>
         
     <div>

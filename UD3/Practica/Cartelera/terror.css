@@ -52,6 +52,15 @@ h2{
     color: rgb(255, 255, 255);
     font-weight: 500;
 }
+
+a:hover{
+    color: darkred;
+}
+
+a:active{
+    color: rgb(228, 140, 140);
+}
+
 .bi{
     font-size: 18px;
     color: white;
@@ -63,10 +72,32 @@ h2{
     padding: 15px;
     background: linear-gradient(90deg, rgba(227, 37, 37, 0.337) 0%, rgba(0,0,0,1) 100%);
     border-bottom: 2px solid white;
+    border-radius: 10px;
 }
 
 .subtitulo{
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.contenedorVotosFicha{
+    border-radius: 10px;
+    margin-left: 32%;
+}
+
+.botonVotos{
+    background-color: white;
+    padding: 8px;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: darkred;
+    margin-top: 5px;
+}
+
+.titulosDatosFicha{
     font-weight: 800;
 }
 
@@ -88,6 +119,10 @@ h2{
     height: 100%;
     width: 60%;
 }
+
+.contenedorSinopsis{
+    border-bottom: 2px solid white;
+  }
 
 .contenedor{
     height: 100%;

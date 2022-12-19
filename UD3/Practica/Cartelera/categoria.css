@@ -13,6 +13,13 @@ a{
     color: white;
 }
 
+a:hover{
+    background-color: rgb(255, 132, 0);
+}
+a:active{
+    color: white;
+}
+
 h1{
     color: white;
     text-align: center;
@@ -35,11 +42,11 @@ h1{
     padding: 20px;
 }
 
-.boton{
+.cabecera{
     text-decoration: none;
     font-weight: bold;
     color: white;
-    margin-left: 450px;
+    margin-left: 490px;
     font-size: 30px;
 }
 
