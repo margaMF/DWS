@@ -1,0 +1,54 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    margin-top: 20px;
+}
+
+.contenedorFormulario{
+    margin: auto;
+    margin-top: 20px;
+    width: 500px;
+    height: 200px;
+    background-color: steelblue;
+    padding: 40px;
+}
+
+h1{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+form{
+    margin-top: 40px;
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.cajaContra{
+    width: 278px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 9px;
+}
+
+.cajaNombre{
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.botonEnviar{
+    width: 100px;
+    height: 30px;
+    margin-left: 298px;
+    font-size: 20px;
+    background-color: rgb(36, 62, 83);
+    border: none;
+    color: white;
+}

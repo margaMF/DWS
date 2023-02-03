@@ -1,0 +1,53 @@
+* {
+    margin: 0px; 
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.columna{
+    margin-top: 20px;
+    line-height: 27px;
+}
+
+.ColA{
+    float: left;
+    width: 25%;
+    color: steelblue;
+    font-weight: bold;
+}
+
+.ColB{
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+
+h1{
+  color: steelblue;
+  font-size: 23px;
+}
+
+.menu{
+    width: 100%;
+    height: 8%;
+    background-color: steelblue;
+}
+
+.contenedorBotones{
+    padding: 20px;
+}
+
+.botonSesion{
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    color: rgb(21, 87, 142);
+    border: solid 2px rgb(21, 87, 142);
+    text-decoration: none;
+}
+
+.contenedorFicha{
+    margin-top: 40px;
+    margin-left: 40px;
+}

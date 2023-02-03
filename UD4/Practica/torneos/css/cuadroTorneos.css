@@ -1,0 +1,68 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(72, 72, 250);
+}
+
+h1{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2{
+    color: white;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+.columnas{
+    float:left;
+    width: 25%;
+}
+
+.contJugador{
+    background-color: white;
+    width: 95px;
+    height: 25px;
+    text-align: center;
+    padding: 8px;
+    margin-top: 20px;
+}
+a{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+.parejas{
+    margin-top: 45px;
+}
+
+.espacioColSemiF{
+    margin-top: 50px;
+}
+
+.espacioColSemiFb{
+    margin-top: 93px;
+}
+
+.espacioColFinal{
+    margin-top: 120px;
+}
+
+.espacioColFinalb{
+    margin-top: 220px;
+}
+
+.espacioCampeon{
+    margin-top: 255px;
+}
+
+.contenedorTabla{
+    width: 1300px;
+    margin-top: 50px;
+    margin-left: 200px;
+}

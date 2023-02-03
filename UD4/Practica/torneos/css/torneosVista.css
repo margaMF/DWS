@@ -1,0 +1,88 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.menu{
+    width: 100%;
+    height: 8%;
+    background-color: steelblue;
+}
+
+.contenedorBotones{
+    padding: 20px;
+}
+
+.botonSesion{
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    color: rgb(21, 87, 142);
+    border: solid 2px rgb(21, 87, 142);
+}
+
+.enlaceCrearTorneo{
+    width: 90px;
+    background-color: steelblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 220px;
+}
+
+.enlacesEdicion{
+    text-decoration: none;
+    margin-left: 35px;
+    color: black;
+    font-weight: bold;
+}
+
+h1{
+    text-align: right;
+    margin-right: 220px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: steelblue;
+}
+
+table, th {
+    border: 1px solid rgb(21, 87, 142);
+}
+
+td{
+    border: 1px solid rgb(21, 87, 142);
+}
+  
+table {
+    width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+}
+  
+td {
+    padding: 5px;
+    width: 400px; 
+}
+
+th{
+    background-color: steelblue;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+tr{
+    background-color: white;
+}
+
+
+
