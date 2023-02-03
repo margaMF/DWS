@@ -4,11 +4,9 @@
     padding: 0;
 }
 
-h1{
-    text-align: right;
-    margin-right: 220px;
-    font-size: 18px;
-    color: steelblue;
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .menu{
@@ -30,14 +28,28 @@ h1{
     border: solid 2px rgb(21, 87, 142);
 }
 
-a{
+.enlacePartidoNuevo{
+    width: 105px;
+    background-color: steelblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 220px;
+}
+
+.enlacesEdicion{
     text-decoration: none;
-    color: steelblue;
+    margin-left: 35px;
+    color: black;
     font-weight: bold;
 }
 
-.contenedorTabla{
-    margin-top: 50px;
+h1{
+    text-align: right;
+    margin-right: 220px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: steelblue;
 }
 
 table, th {
@@ -49,10 +61,11 @@ td{
 }
   
 table {
+    width: 1100px;
+    margin: auto;
     border-collapse: collapse;
     width: 1100px;
     margin: auto;
-    width: 1100px;
     margin-top: 20px;
 }
   

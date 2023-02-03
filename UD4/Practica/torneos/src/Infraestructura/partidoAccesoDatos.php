@@ -1,6 +1,6 @@
 <?php
 
-    class jugadoresAccesoDatos{
+    class PartidosAccesoDatos{
         
         function __construct(){
         }
@@ -11,16 +11,16 @@
                     echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
             mysqli_select_db($conexion, 'BD_Torneos');
-            $consulta = mysqli_prepare($conexion, "SELECT ID, Nombre FROM T_JUGADOR;");
+            $consulta = mysqli_prepare($conexion, "SELECT ID, JugadorA, JugadorB, Ganador, Ronda, Torneo FROM t_partido;;");
             $consulta->execute();
             $result = $consulta->get_result();
 
-            $jugadores =  array();
+            $partidos =  array();
 
             while ($myrow = $result->fetch_assoc()) {
-                array_push($jugadores,$myrow);
+                array_push($partidos,$myrow);
 
             }
-            return $jugadores;
+            return $partidos;
         }
     }

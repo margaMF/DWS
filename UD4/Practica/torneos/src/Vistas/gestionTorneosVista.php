@@ -9,6 +9,12 @@
     </head>
     <body>
         <div class="contenedor">
+            <div class="menu">
+                <div class="contenedorBotones">
+                    <a href="logout"  class="botonSesion">Cerrar sesión</a>
+                </div>
+            </div>
+
             <div class="contenedorFormulario">
                 <form action="">
                     <label for="nombre">Nombre:</label>

@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS BD_Torneos;
 
 /*-----------------------------------------------------------------------TABLAS----------------------------------------------------------------------------------*/
 CREATE TABLE T_Jugador(
-ID INT AUTO_INCREMENT PRIMARY KEY, /*todos los ID tienen que ser autoincrementables*/
+ID INT AUTO_INCREMENT PRIMARY KEY,
 Nombre VARCHAR(255) NOT NULL,
 partidosJugados INT DEFAULT 0,
 partidosGanados INT DEFAULT 0,
@@ -50,17 +50,14 @@ select * from t_usuario;
 
 /*------------------------------------------------------------------------------JUGADOR-------------------------------------------------------------------------------*/
 INSERT INTO T_Jugador (Nombre) VALUES 
-('Alex'), 
-('Carlos'),
-('Belén'),
-('Marta'),
-('Jaime'),
-('Maria'),
-('Miguel'),
-('Raquel');
-
-select * from t_jugador;
-delete from t_jugador where ID > 0; 
+('Jorge'), 
+('Teresa'), 
+('Hugo'),
+('Lucía'),
+('Mateo'),
+('Júlia'),
+('Lucas'),
+('Isabella');
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------TORNEOS-------------------------------------------------------------------------------*/
@@ -69,6 +66,26 @@ INSERT INTO t_torneo (Nombre, Fecha, Estado, Jugadores) VALUES ('Torneo 2021', '
 select * from t_torneo;
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------PARTIDOS-------------------------------------------------------------------------------*/
+INSERT INTO T_Partido (JugadorA, JugadorB, Ronda, Torneo) VALUES ('1', '4', 'Cuartos', '1'), 
+('3', '6', 'Cuartos', '1'), 
+('5', '2', 'Cuartos', '1'), 
+('7', '8', 'Cuartos', '1'),
+('1', '3', 'Semifinales', '1'),
+('5', '8', 'Semifinales', '1'),
+('1', '8', 'Final', '1');
+
+INSERT INTO T_Partido (JugadorA, JugadorB, Ronda, Torneo) VALUES ('2', '4', 'Cuartos', '2'), 
+('1', '7', 'Cuartos', '2'), 
+('5', '3', 'Cuartos', '2'), 
+('6', '8', 'Cuartos', '2'),
+('4', '7', 'Semifinales', '2'),
+('3', '6', 'Semifinales', '2'),
+('4', '6', 'Final', '2');
+select * from t_partido;
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /*-----------------------------------------------------------------------------CONSULTAS------------------------------------------------------------------------------*/
 SELECT ID, Nombre, Fecha, Estado, Jugadores FROM t_torneo;
 SELECT ID, Nombre FROM T_JUGADOR;
+SELECT ID, JugadorA, JugadorB, Ganador, Ronda, Torneo FROM t_partido;

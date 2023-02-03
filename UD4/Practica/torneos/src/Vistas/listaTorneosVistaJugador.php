@@ -12,10 +12,11 @@
 
             <div class="menu">
                 <div class="contenedorBotones">
-                    <a href="loginVista" class="botonSesion">Iniciar sesion</a>
-                    <a href="logout"  class="botonSesion">Cerrar sesion</a>
+                    <a href="logout"  class="botonSesion">Cerrar sesión</a>
                 </div>
             </div>
+
+            
 
             <div class="contenedorTabla">
 
@@ -42,9 +43,10 @@
 
                     <?php 
                         foreach ($datosTorneos as $torneo){
+                            $idTorneo = $torneo->getID();
                             echo "<tr>";
                                 echo "<td>".$torneo->getID()."</td>";
-                                echo "<td>".$torneo->getNombre()."</td>";
+                                echo "<td><a href='cuadroTorneos.php?ID=$idTorneo'>".$torneo->getNombre()."</a></td>";
                                 echo "<td>".$torneo->getFecha()."</td>";
                                 echo "<td>".$torneo->getEstado()."</td>";
                                 echo "<td>".$torneo->getJugadores()."</td>";

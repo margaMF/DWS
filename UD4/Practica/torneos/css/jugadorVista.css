@@ -36,6 +36,7 @@ h1{
 
 .contenedorBotones{
     padding: 20px;
+    margin-left: 90%;
 }
 
 .botonSesion{
@@ -50,4 +51,5 @@ h1{
 .contenedorFicha{
     margin-top: 40px;
     margin-left: 40px;
+    width: 100%;
 }

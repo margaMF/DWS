@@ -11,8 +11,7 @@
         <div class="contenedor">
             <div class="menu">
                 <div class="contenedorBotones">
-                    <a href="loginVista" class="botonSesion">Iniciar sesion</a>
-                    <a href="logout"  class="botonSesion">Cerrar sesion</a>
+                    <a href="logout"  class="botonSesion">Cerrar sesión</a>
                 </div>
             </div>
 

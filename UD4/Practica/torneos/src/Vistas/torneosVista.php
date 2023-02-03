@@ -11,8 +11,7 @@
         <div class="contenedor">
             <div class="menu">
                 <div class="contenedorBotones">
-                    <a href="loginVista" class="botonSesion">Iniciar sesion</a>
-                    <a href="logout"  class="botonSesion">Cerrar sesion</a>
+                    <a href="logout"  class="botonSesion">Cerrar sesión</a>
                 </div>
             </div>
 
@@ -21,7 +20,8 @@
             </div>
            
             <?php
-                require("../Negocio/torneosReglasNegocio.php");
+                require_once("../Negocio/torneosReglasNegocio.php");
+                require_once("../Negocio/jugadoresReglasNegocio.php");
 
                 $torneosBL = new TorneosReglasNegocio();
                 $datosTorneos = $torneosBL->obtener();
@@ -51,8 +51,7 @@
                             echo "<td>".$torneo->getEstado()."</td>";
                             echo "<td>-</td>";
                             echo "<td>";
-                                //Misma página distintas maquetaciones, con boolean, si es edicion->Esto si es creacion->esto
-                                echo "<a href='' class='enlacesEdicion'>Editar</a>";
+                                echo "<a href='gestionTorneosVistaEdicion.php?ID='".$torneo->getID()."' class='enlacesEdicion'>Editar</a>";
                                 echo "<a href='' class='enlacesEdicion'>Borrar</a>";
                             echo "</td>";
                         echo "</tr>";  

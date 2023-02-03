@@ -25,18 +25,18 @@
         }
 
         function obtener(){
-            $torneosDAL = new JugadoresAccesoDatos();
-            $rs = $torneosDAL->obtener();
+            $jugadoresDAL = new JugadoresAccesoDatos();
+            $rs = $jugadoresDAL->obtener();
 
-            $listaTorneos =  array();
+            $listaJugadores =  array();
 
-            foreach ($rs as $torneo){
-                $oTorneosReglasNegocio = new JugadoresReglasNegocio();
-                $oTorneosReglasNegocio->Init($torneo['ID'], $torneo['Nombre']);
-                array_push($listaTorneos,$oTorneosReglasNegocio);
+            foreach ($rs as $jugadorDatos){
+                $oJugadorReglasNegocio = new JugadoresReglasNegocio();
+                $oJugadorReglasNegocio->Init($jugadorDatos['ID'], $jugadorDatos['Nombre']);
+                array_push($listaJugadores,$oJugadorReglasNegocio);
             }
             
-            return $listaTorneos;
+            return $listaJugadores;
             
         }
 

@@ -9,23 +9,59 @@
     </head>
     <body>
         <div class="contenedor">
-            <h1>Torneo de prueba 2023</h1>
+            <div class="menu">
+                <div class="contenedorBotones">
+                    <a href="logout"  class="botonSesion">Cerrar sesión</a>
+                </div>
+            </div>
+            
+            <h1>TORNEOS IES SON FERRER</h1>
+            
             <div class="contenedorTabla">
 
                 <div class='columnas'>
                     <h2>CUARTOS</h2>
                     <?php 
-                        require("../Negocio/jugadoresReglasNegocio.php");
+                        require_once("../Negocio/jugadoresReglasNegocio.php");
+                        require_once("../Negocio/partidoReglasNegocio.php");
+                        require_once("../Negocio/torneosReglasNegocio.php");
+
 
                         $jugadores = new JugadoresReglasNegocio();
                         $datosJugadores = $jugadores->obtener();
 
-                        foreach ($datosJugadores as $jugador){
-                            $idJugador = $jugador->getID();
+                        $torneo = new TorneosReglasNegocio();
+
+                        $id_torneo = $_GET['ID'];
+
+                        $partido = new PartidosReglasNegocio();
+
+                        $partidoCuartos = $partido->buscarPartidosPorRonda($id_torneo, "Cuartos");
+
+                        $partidoSemi = $partido->buscarPartidosPorRonda($id_torneo, "Semifinales"); 
+                  
+
+                        $partidoFinales = $partido->buscarPartidosPorRonda($id_torneo, "Final");
+
+                        foreach ($partidoCuartos as $partido){
+
+                            $idjugadorA = $partido->getJugadorA();
+                            $jugadorA = $jugadores->buscarJugador($idjugadorA);
+
+                            $idjugadorB = $partido->getJugadorB();
+                            $jugadorB = $jugadores->buscarJugador($idjugadorB);
+
+                            $nombreA = $jugadorA->getNombre();
+                            $nombreB = $jugadorB->getNombre();
+
                             echo "<div class='parejas'>";
 
                                 echo "<div class='contJugador'>";
-                                        echo "<a href='jugadorVista.php?ID=$idJugador'>".$jugador->getNombre()."</a>";
+                                        echo "<a href='jugadorVista.php?ID=$idjugadorA'>$nombreA</a>";
+                                echo "</div>";
+
+                                echo "<div class='contJugador'>";
+                                        echo "<a href='jugadorVista.php?ID=$idjugadorB'>$nombreB</a>";
                                 echo "</div>";
 
                             echo "</div>";
@@ -35,41 +71,65 @@
 
                 <div class="columnas">
                     <h2>SEMIFINAL</h2>
-                    <div class='espacioColSemiF'>
-                        <?php 
-                            foreach ($datosJugadores as $jugador){
-                                echo "<div class='contJugador'>";
-                                    //Recoger el ID del jugador y pasarla a la url por post
-                                    // echo "<a href=''>".$jugador->getNombre()."</a>"; CAMBIAAAAAAAAAAAAR
-                                echo "</div>";
+                    <?php
+                       echo "<div class='espacioColSemiF'>";
+                            foreach ($partidoSemi as $partidoS){
+                            $idjugadorA = $partidoS->getJugadorA();
+                            $jugadorA = $jugadores->buscarJugador($idjugadorA);
+
+                            $idjugadorB = $partidoS->getJugadorB();
+                            $jugadorB = $jugadores->buscarJugador($idjugadorB);
+
+                            $nombreA = $jugadorA->getNombre();
+                            $nombreB = $jugadorB->getNombre();
+
+                            echo "<div class='contJugadorSemiF1'>";
+                                    echo "<a href='jugadorVista.php?ID=$idjugadorA'>$nombreA</a>";
+                            echo "</div>";
+
+                            echo "<div class='contJugadorSemiF2'>";
+                                    echo "<a href='jugadorVista.php?ID=$idjugadorB'>$nombreB</a>";
+                            echo "</div>";                                
                             }
-                        ?>
-                    </div>
+                        echo "</div>";
+                    ?>
                 </div>
 
                 <div class="columnas">
                     <h2>FINAL</h2>
-                    <div class='espacioColSemiF'>
-                        <?php 
-                            foreach ($datosJugadores as $jugador){
+                    <?php
+                        echo"<div class='espacioColFinal'>";
+                            foreach ($partidoFinales as $partidoF){
+                                $idjugadorA = $partidoF->getJugadorA();
+                                $jugadorA = $jugadores->buscarJugador($idjugadorA);
+
+                                $idjugadorB = $partidoF->getJugadorB();
+                                $jugadorB = $jugadores->buscarJugador($idjugadorB);
+
+                                $nombreA = $jugadorA->getNombre();
+                                $nombreB = $jugadorB->getNombre();
+
                                 echo "<div class='contJugador'>";
-                                    // echo "<a href=''>".$jugador->getNombre()."</a>"; CAMBIAAAAAAAAAAAAR
+                                        echo "<a href='jugadorVista.php?ID=$idjugadorA'>$nombreA</a>";
                                 echo "</div>";
-                            }
-                        ?>
-                    </div>
+
+                                echo "<div class='contJugadorF2'>";
+                                        echo "<a href='jugadorVista.php?ID=$idjugadorB'>$nombreB</a>";
+                                echo "</div>";
+                                }
+                        echo "</div>";
+                    ?>
                 </div>
 
                 <div class="columnas">
                     <h2>CAMPEÓN</h2>
                     <div class='espacioColSemiF'>
                         <?php 
-                            foreach ($datosJugadores as $jugador){
-                                echo "<div class='contJugador'>";
-                                    // echo "<a href=''>".$jugador->getNombre()."</a>"; CAMBIAAAAAAAAAAAAR
-                                echo "</div>";
-                            }
-                        ?>
+                            
+                            echo "<div class='contJugador'>";
+                                echo "<a href=''></a>";
+                            echo "</div>";
+                        ?> 
                     </div>
                 </div>
 
