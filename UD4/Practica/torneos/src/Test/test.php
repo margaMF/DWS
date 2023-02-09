@@ -1,7 +1,7 @@
 
 <?php
 
-require("./Infraestructura/usuarioAccesoDatos.php");
+require("../Infraestructura/usuarioAccesoDatos.php");
 
 function test_alta_usuario()
 {
